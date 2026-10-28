@@ -1,7 +1,7 @@
 // Service worker do TeuVet: guarda os arquivos do app para abrir rápido e permitir a instalação.
 // Os dados (Supabase) não são guardados aqui; a consulta offline de conteúdo chega na Etapa 7.
-const CACHE = 'teuvet-v1';
-const SHELL = ['./', 'index.html', 'styles.css', 'config.js', 'src/app.js', 'src/api.js', 'src/util.js', 'src/constants.js', 'manifest.webmanifest', 'icons/icon-192.png'];
+const CACHE = 'teuvet-v2';
+const SHELL = ['./', 'index.html', 'styles.css', 'config.js', 'app.js', 'api.js', 'util.js', 'constants.js', 'manifest.webmanifest', 'icon-192.png'];
 
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL)).then(() => self.skipWaiting()));
